@@ -1,1 +1,0 @@
-# TheSmallestExtractionProblem.github.io

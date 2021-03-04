@@ -1,14 +1,135 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Test Page</title>
-</head>
-<body>
-
-<h1>Test</h1>
-<p>Test</p>
-
-</body>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="css/style.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+      <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+      <title>The Smallest Extraction Problem</title>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+   </head>
+   <body>
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg navbar-light py-4">
+         <a class="navbar-brand" href="#">The Smallest Extraction Problem</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+      </nav>
+      <!-- INFO -->
+      <div class="container-fluid py-2">
+      <div class="row">
+         <div class="col-sm-12 col-md-9">
+         	<p align="justify">
+            We formalize the <strong>Smallest Extraction Problem</strong> (SEP), an optimization problem for finding the grammar of a family that is able to describe a set of Web pages and contextually extract data from them.<br/>
+           	this website we present the dataset, the results, and the logs of the experiments presented in The Smallest Extraction Problem paper.
+        </p>
+         </div>
+         <div class="col-sm-12 col-md-3">
+            <span class="badge badge-dark">Authors</span>
+            <ul>
+               <li>Valerio Cetorelli (Roma Tre University)</li>
+               <li><a href="http://atzeni.dia.uniroma3.it/"> Paolo Atzeni</a> (Roma Tre University)</li>
+               <li><a href="http://crescenzi.dia.uniroma3.it">Valter Crescenzi</a> (Roma Tre University)</li>
+               <li><a href="https://fmilicchio.bitbucket.io">Franco Milicchio</a> (Roma Tre University)</li>
+            </ul>
+         </div>
+      </div>
+      For questions, comments and suggestions, please write to <b class="important-term"> <a href="mailto:valerio.cetorelli@uniroma3.it">valerio.cetorelli@uniroma3.it</a></b>.
+      <div class="row">
+         <div class="col-12">
+            <hr>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-sm-12 col-md-9">
+            <h3 class="section-title">Table of Contents</h3>
+            <ol>
+               <li>
+                  <a href="#datasets">Datasets</a>
+                  <ol>
+                     <li><a href="#dataset-swde">SWDE Dataset</a></li>
+                     <li><a href="#dataset-alaska">Alaska Benchmark</a></li>
+                  </ol>
+               </li>
+               <li>
+                  <a href="#experiments">Experiments</a>
+                  <ol>
+                     <li><a href="#experiments-swde">SWDE Dataset</a></li>
+                     <li><a href="#experiments-alaska">Alaska Benchmark</a></li>
+                  </ol>
+               </li>
+            </ol>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-12">
+            <hr>
+         </div>
+      </div>
+      <!--DATASETS -->
+      <div class="row">
+      <div class="col-sm-12 col-md-12">
+      <h3 id="datasets">1 Datasets</h3>
+      <!-- <p>temp!</p> -->
+      <!-- SWDE DATASET -->
+      <div class="row">
+         <div class="col-sm-12 col-md-12">
+            <h3 id="dataset-swde">1.1 SWDE Dataset</h3>
+            <p align="justify">SWDE is a rather consolidated dataset progressively adopted as a reference by several Web data extraction systems and therefore suitable for comparing against existing state-of-the-art approaches. It was sourced from 80 websites divided into 8 domains for a total of about 124k pages. However, it does not perfectly challenge the robustness of our approach because it includes only 4 <i>core</i> attributes per domain. The very same attributes are then extracted from 10 websites, mostly with a quite well-structured HTML template, especially in the surroundings of the chosen attributes.
+            </p>
+            <ul>
+               <li>You can find the dataset and the ground truth <a href="https://archive.codeplex.com/?p=swde">HERE</a>.</li>
+            </ul>
+         </div>
+      </div>
+      <!-- ALASKA DATASET -->
+      <div class="row">
+         <div class="col-sm-12 col-md-12">
+            <h3 id="dataset-alaska">1.2 ALASKA Benchmark Dataset</h3>
+            <p align="justify">Alaska is a more recent benchmark targeting Web data integration tasks even though it has not specifically designed for evaluating Web data extraction systems. We adapted the benchmark because it includes attributes of a remarkable variety.<br/>The Alaska benchmark includes a dataset of Web pages about e-commerce products with a manually curated ground truth made of linkages (pair of pages referring to the same real-world entity) and schema matches (pair of attributes from distinct sites with matching semantics). Unfortunately, it does not include a ground truth specifically designed for Web data extraction, as the benchmark aims at evaluating the integration of the extracted data rather than their extraction from the HTML source of the pages. Indeed, the dataset is available as JSON files created by using an ad-hoc extractor specialized for HTML tables containing products specification.<br/>
+               Given the size of the benchmark, manually curating the quality of those extracted data is a daunting task. We derived a Web data extraction ground truth by looking for the occurrences of attribute values in the HTML source code of the pages. We selected only the attributes that according to the Alaska benchmark ground truth are offered by several pages across distinct sites. Since the results of the integration is manually curated, and the data are redundantly offered by multiple sources, we build our Web data extraction ground truth based on the assumption that these correctly integrated redundant data are correctly extracted, as well. We manually verified and confirmed the correctness of all the values for a random sample of 50 values. We also manually checked, for a sample of 5 random attributes of the selected ones, that all the values not available in the JSON files were also not available in the HTML source of the corresponding page.
+            </p>
+            <ul>
+               <li>The Alaska Benchmark dataset was kindly made available to us by the <a href="http://alaska.inf.uniroma3.it/">Alaska Benchmark team</a>. Please, ask them for the orginal HTML pages.</li>
+               <li>You can download our ground truth for the experiments on the Alaska Benchmark <a href="https://drive.google.com/file/d/10ki83u3j-UgprAnq-5s7s0ZqXESO8P9i">HERE</a>.</li>
+            </ul>
+         </div>
+      </div>
+      <!--EXPERIMENTS -->
+      <div class="row">
+      <div class="col-sm-12 col-md-12">
+      <h3 id="experiments">2 Experiments</h3>
+      <p><strong>The logs of our experiments will be available in a couple of days!</strong></p>
+      <!-- SWDE DATASET -->
+      <div class="row">
+         <div class="col-sm-12 col-md-12">
+            <h3 id="experiments-swde">2.1 SWDE Dataset Experiments</h3>
+            <!-- <p align="justify">temp!</p> -->
+            <ul>
+               <li>You can find the logs of the experiments here.</li>
+            </ul>
+         </div>
+      </div>
+      <!-- ALASKA EXPERIMENTS -->
+      <div class="row">
+         <div class="col-sm-12 col-md-12">
+            <h3 id="experiments-alaska">2.2 ALASKA Benchmark Experiments</h3>
+            <!-- <p align="justify">temp!</p> -->
+            <ul>
+               <li>You can find the logs of the experiments here.</li>
+            </ul>
+         </div>
+      </div>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   </body>
 </html>
-
-
