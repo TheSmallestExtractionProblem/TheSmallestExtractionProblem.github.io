@@ -26,11 +26,11 @@
       <div class="row">
          <div class="col-sm-12 col-md-12">
          	<p align="justify">
-            We formalize the <strong>Smallest Extraction Problem</strong> (SEP), an optimization problem for finding the grammar of a family that is able to describe a set of Web pages and contextually extract data from them.<br/>
-           	this website we present the dataset, the results, and the logs of the experiments presented in The Smallest Extraction Problem paper.
+            The <strong>Smallest Extraction Problem</strong> (SEP) is optimization problem for finding the grammar of a family that is able to describe a set of Web pages and contextually extract data from them.<br/>
+           In this website we present the dataset, the results, and the logs of the experiments presented in The Smallest Extraction Problem paper.
         </p>
-         </div>
       </div>
+   </div>
       For questions, comments and suggestions, please write to <b class="important-term"> <a href="mailto:valerio.cetorelli@uniroma3.it">valerio.cetorelli@uniroma3.it</a></b>.
       <div class="row">
          <div class="col-12">
@@ -83,7 +83,7 @@
       <div class="row">
          <div class="col-sm-12 col-md-12">
             <h3 id="dataset-alaska">1.2 ALASKA Benchmark Dataset</h3>
-            <p align="justify">Alaska is a more recent benchmark targeting Web data integration tasks even though it has not specifically designed for evaluating Web data extraction systems. We adapted the benchmark because it includes attributes of a remarkable variety.<br/>
+            <p align="justify">Alaska is a recent benchmark targeting Web data integration tasks. We adapted the benchmark because it includes attributes of a remarkable variety.<br/>
                The Alaska benchmark includes a dataset of Web pages about e-commerce products with a manually curated ground truth made of linkages (pair of pages referring to the same real-world entity) and schema matches (pair of attributes from distinct sites with matching semantics). Unfortunately, it does not include a ground truth specifically designed for Web data extraction, as the benchmark aims at evaluating the integration of the extracted data rather than their extraction from the HTML source of the pages.<br/>
                We derived our Web data extraction ground truth by looking for the occurrences of attribute values in the HTML source code of the pages. We selected only the attributes that according to the Alaska benchmark ground truth are offered by several pages across distinct sites. Since the results of the integration is manually curated, and the data are redundantly offered by multiple sources, we build our Web data extraction ground truth based on the assumption that these correctly integrated redundant data are correctly extracted, as well.
             </p>
@@ -104,7 +104,8 @@
             <h3 id="experiments-swde">2.1 SWDE Dataset Experiments</h3>
             <!-- <p align="justify">temp!</p> -->
             <ul>
-               <li>You can find the logs of the experiments here.</li>
+               <li>You can find the logs of the experiments using thr A* algorithm <a href="swde-a/root(0).log.html">HERE</a>.</li>
+               <li>You can find the logs of the experiments using thr <tt>Greedy</tt> algorithm HERE.</li>
             </ul>
          </div>
       </div>
