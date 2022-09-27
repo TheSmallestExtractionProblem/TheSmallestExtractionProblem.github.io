@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="css/style.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+      <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+      <title>The Smallest Extraction Problem</title>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+   </head>
+   <body>
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg navbar-light py-4">
+         <a class="navbar-brand" href="#">The Smallest Extraction Problem</a>
+         </button>
+      </nav>
+      <!-- INFO -->
+      <div class="container-fluid py-2">
+      <div class="row">
+         <div class="col-sm-12 col-md-12">
+         	<p align="justify">
+            The <strong>Smallest Extraction Problem</strong> (SEP) is optimization problem for finding the grammar of a family that is able to describe a set of Web pages and contextually extract data from them.<br/>
+           In this website we present the dataset, the results, and the logs of the experiments presented in The Smallest Extraction Problem paper.
+        </p>
+      </div>
+   </div>
+      For questions, comments and suggestions, please write to <b class="important-term"> <a href="mailto:valerio.cetorelli@uniroma3.it">valerio.cetorelli@uniroma3.it</a></b>.
+      <div class="row">
+         <div class="col-12">
+            <hr>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-sm-12 col-md-9">
+            <h3 class="section-title">Table of Contents</h3>
+            <ol>
+               <li>
+                  <a href="#logs">Hypertextual logs</a>
+               </li>
+               <li>
+                  <a href="#datasets">Datasets</a>
+                  <ol>
+                     <li><a href="#dataset-swde">SWDE Dataset</a></li>
+                     <li><a href="#dataset-alaska">Alaska Benchmark</a></li>
+                  </ol>
+               </li>
+               <li>
+                  <a href="#experiments">Experiments</a>
+                  <ol>
+                     <li><a href="#experiments-swde">SWDE Dataset</a></li>
+                     <li><a href="#experiments-alaska">Alaska Benchmark</a></li>
+                  </ol>
+               </li>
+            </ol>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-12">
+            <hr>
+         </div>
+      </div>
+      <div class="row">
+      <div class="col-sm-12 col-md-12">
+      <h3 id="logs">1 Hypertextual logs</h3>
+<p align="justify"> </p>
+The following logs are automatically generated in the form of web pages. <a href="alaska-greedy-inf-10/Running_experiment__i_buy.net__i_(1)/inferred_tree_model_(4)/inferred_tree_model_(4).log.html">HERE</a> is an example of a landmark-tree: <b class="important-term">L</b>(eft), <b class="important-term">I</b>(nner), and <b class="important-term">R</b>(ight) are used to indicate the path of each landmark in the tree. The extracted values are presented in tabular form as shown <a href="alaska-greedy-inf-10/Running_experiment__i_buy.net__i_(1)/output_values(10)/output_values(10).log.html">HERE</a>.
+<ul>
+                  <li>You can find the logs of the experiments using the A* algorithm on the SWDE dataset <a href="swde-a/root(0).log.html">HERE</a>.</li>
+                  <li>You can find the logs of the experiments using the A* algorithm on the Expanded SWDE dataset <a href="swde-exp-a/root(0).log.html">HERE</a>.</li>
+               <li>You can find the logs of the experiments using the <tt>Greedy</tt> algorithm on the SWDE dataset <a href="swde-greedy-inf/root(0).log.html">HERE</a>.</li>
+               <li>You can find the logs of the experiments using the <tt>Greedy</tt> algorithm on the Expanded SWDE dataset <a href="swde-exp-greedy-inf/root(0).log.html">HERE</a>.</li>
+  <li>You can find the logs of the experiments on the Alaska Benchmark <a href="alaska-experiments.html">HERE</a>. </li>
+</ul>
+   </div>
+</div>
+      <!--DATASETS -->
+      <div class="row">
+      <div class="col-sm-12 col-md-12">
+      <h3 id="datasets">2 Datasets</h3>
+      <!-- <p>temp!</p> -->
+      <!-- SWDE DATASET -->
+      <div class="row">
+         <div class="col-sm-12 col-md-12">
+            <h3 id="dataset-swde">2.1 SWDE Dataset</h3>
+            <p align="justify">SWDE is a rather consolidated dataset progressively adopted as a reference by several Web data extraction systems. It was sourced from 80 websites divided into 8 domains for a total of about 124k pages.
+            </p>
+            <ul>
+               <li>You can find the dataset and the ground truth <a href="https://archive.codeplex.com/?p=swde">HERE</a>.</li>
+            </ul>
+            <p align="justify">The <i>expanded</i> version of the SWDE dataset includes additional ground-truth for 272 additional attributes from 21 sites of 3 SWDE domains (Movie,NBA,University).
+            </p>
+            <ul>
+               <li>You can find the expanded ground truth <a href="https://homes.cs.washington.edu/~lockardc/expanded_swde.html">HERE</a>.</li>
+            </ul>
+         </div>
+      </div>
+      <!-- ALASKA DATASET -->
+      <div class="row">
+         <div class="col-sm-12 col-md-12">
+            <h3 id="dataset-alaska">2.2 ALASKA Benchmark Dataset</h3>
+            <p align="justify">Alaska is a recent benchmark targeting Web data integration tasks. We adapted the benchmark because it includes attributes of a remarkable variety.<br/>
+               The Alaska benchmark includes a dataset of Web pages about e-commerce products with a manually curated ground truth made of linkages (pair of pages referring to the same real-world entity) and schema matches (pair of attributes from distinct sites with matching semantics). Unfortunately, it does not include a ground truth specifically designed for Web data extraction, as the benchmark aims at evaluating the integration of the extracted data rather than their extraction from the HTML source of the pages.<br/>
+               We derived our Web data extraction ground truth by looking for the occurrences of attribute values in the HTML source code of the pages. We selected only the attributes that according to the Alaska benchmark ground truth are offered by several pages across distinct sites. Since the results of the integration is manually curated, and the data are redundantly offered by multiple sources, we build our Web data extraction ground truth based on the assumption that these correctly integrated redundant data are correctly extracted, as well.
+            </p>
+            <ul>
+               <li>The Alaska Benchmark dataset was kindly made available to us by the <a href="http://alaska.inf.uniroma3.it/">Alaska Benchmark team</a>. Please, ask them for the orginal HTML pages.</li>
+               <li>You can download our ground truth for the experiments on the Alaska Benchmark <a href="https://drive.google.com/file/d/10ki83u3j-UgprAnq-5s7s0ZqXESO8P9i">HERE</a>.</li>
+            </ul>
+         </div>
+      </div>
+      <!--EXPERIMENTS -->
+      <div class="row">
+      <div class="col-sm-12 col-md-12">
+      <h3 id="experiments">3 Experiments</h3>
+      <!-- SWDE DATASET -->
+      <div class="row">
+         <div class="col-sm-12 col-md-12">
+            <h3 id="experiments-swde">3.1 SWDE Dataset Experiments</h3>        
+            <p align="justify">The following charts show our precision and recall on the SWDE dataset.<br/>
+<img class="figure-img img-fluid" src="./figures/swde-precision.png" alt="SWDE precision" width="500" />
+<img class="figure-img img-fluid" src="./figures/swde-recall.png" alt="SWDE recall" width="500" />
+            </p>
+            </div>
+      </div>
+      <!-- ALASKA EXPERIMENTS -->
+      <div class="row">
+         <div class="col-sm-12 col-md-12">
+            <h3 id="experiments-alaska">3.2 ALASKA Benchmark Experiments</h3>         
+          <p align="justify">The following charts show our precision, recall, and number of splits on the Alaska Benchmark dataset.<br/>
+<img class="figure-img img-fluid" src="./figures/alaska-precision.png" alt="ALASKA precision" width="1000" /><br/>
+<img class="figure-img img-fluid" src="./figures/alaska-recall.png" alt="ALASKA recall" width="1000"/><br/>
+
+The following charts show the number of split operation performed on the Alaska Benchamark. The former shows the total number of split operation on the whole training set and the latter group toghether splits on with the same path (w.r.t the landmark-tree).<br/>
+<img class="figure-img img-fluid" src="./figures/split-chart1.png" alt="ALASKA recall" width="500"/>
+<img class="figure-img img-fluid" src="./figures/split-chart2.png" alt="ALASKA recall" width="500"/><br/>
+</p>
+<p align="justify">
+The following charts show the differences between the number of splits operated by the A* and <tt>Greedy</tt> algorithms versus the size of the regions involved by the split, the inpact of the <tt>k</tt> paramether in the search space for solving the <tt>k</tt>-SEP, and the average results obtained with the A* and <tt>Greedy</tt> algorithms with a growing number of training pages.<br/>
+<img class="figure-img img-fluid" src="./figures/split-count.png" alt="ALASKA precision" height="450" width="300" />
+<img class="figure-img img-fluid" src="./figures/k-sep.png" alt="ALASKA precision" height="450" width="300" />
+<img class="figure-img img-fluid" src="./figures/subsampled.png" alt="ALASKA precision" height="450" width="300" /><br/>
+</p>
+</div>
+      </div>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   </body>
+</html>
